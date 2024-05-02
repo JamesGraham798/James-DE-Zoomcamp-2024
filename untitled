@@ -1,11 +1,17 @@
 
 
 docker run -it \
-    -e POSTGRES_USER="root" \
-    -e POSTGRES_PASSWORD="root" \
-    -e POSTGRES_DB="ny_taxi" \
+    --name ny-postgres-container \
+    -e POSTGRES_USER=root \
+    -e POSTGRES_PASSWORD=root \
+    -e POSTGRES_DB=ny_taxi \
     -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
     -p 5432:5432 \
     postgres:13
 
 # to remove ny_taxi_postgres_data: sudo rm -rf ny_taxi_postgres_data
+
+# to disconnect: /q + enter
+
+# to reconnect to database: psql -h <hostname> -U <username> -d <database_name>
+
