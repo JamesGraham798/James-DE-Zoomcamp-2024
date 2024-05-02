@@ -1,6 +1,6 @@
 #to run postgres container
 #create the postgres network
-docker create network pg-network
+docker network create pg-network
 
 #create docker volume
 docker volume create --name ny_taxi_postgres_data -d local
